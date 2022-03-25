@@ -2,7 +2,7 @@ const screen = document.querySelector('#screen');
 let height;
 let width;
 const ctx = screen.getContext('2d');
-const sizeScreen = (function(){
+const sizeScreen = (function() {
 	height = window.innerHeight;
 	width = window.innerWidth;
 	screen.height = height;
