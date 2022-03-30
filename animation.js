@@ -17,5 +17,5 @@ const startAnimation = function(){
 		end = Date.now();
 		requestAnimationFrame(frame);
 	}
-	//requestAnimationFrame(frame);
+	requestAnimationFrame(frame);
 }
