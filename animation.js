@@ -10,15 +10,12 @@ const sizeScreen = function() {
 }
 
 const startAnimation = function(){
-	let start = Date.now();
-	let end = Date.now();
 	function frame(time){
-		console.log(time)
 		ctx.fillStyle = 'rgb(0,0,0)';
 		ctx.fillRect(0, 0, width, height);	
 		Player.drawEveryone();
 		end = Date.now();
 		requestAnimationFrame(frame);
 	}
-	requestAnimationFrame(frame);
+	//requestAnimationFrame(frame);
 }
