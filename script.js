@@ -1,0 +1,2 @@
+sizeScreen();
+startAnimation();
