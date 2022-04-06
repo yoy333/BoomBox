@@ -8,6 +8,7 @@ const sizeScreen = function(){
 	screen.height = height;
 	screen.width = width;
 }
+window.addEventListener('resize', sizeScreen);
 let request;
 let run = true;
 function frame(time){
