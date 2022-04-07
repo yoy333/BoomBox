@@ -1,9 +1,9 @@
 const Player = function(){
 	this.color = 'rgb(255, 0, 0)';
-	this.x = 18;
-	this.y = 18;
-	this.width = 35;
-	this.height = 35;
+	this.x = 13;
+	this.y = 13;
+	this.width = 25;
+	this.height = 25;
 	this.speed = 5;
 	Player.everyone.push(this);
 }
@@ -37,20 +37,18 @@ Object.defineProperty(Player.prototype, 'top', {
 })
 
 Player.prototype.move = function(x, y){
-	const moveOnAxis = (at, to) => {
-		const beyondSpeed = Math.abs(to-at)>this.speed;
-		console.log(beyondSpeed);
-		if(beyondSpeed){
-			at += Math.sign(to-at)*this.speed;
-		}else{
-			at = to;
-		}
-		return at;
-	}
-	console.log("x");
-	this.x = moveOnAxis(this.x, x);
-	console.log("y");
-	this.y = moveOnAxis(this.y, y);
+	const dX = x-this.x;
+	const dY = y-this.y;
+	const h = Math.sqrt(dX**2+dY**2)
+	const scale = h/this.speed;
+	if(Math.abs(x-this.x)>this.speed){
+		this.x += dX/scale;
+	}else
+		this.x = x;
+	if(Math.abs(y-this.y)>this.speed)
+		this.y += dY/scale;
+	else
+		this.y = y;
 }
 
 const p1 = new Player();

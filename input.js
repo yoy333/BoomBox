@@ -10,6 +10,6 @@ window.addEventListener('keyup', (e)=>{
 })
 
 window.addEventListener('click', e => {
-	mouse[0] = e.x-10;
-	mouse[1] = e.y-10;
+	mouse[0] = e.x;
+	mouse[1] = e.y;
 })
